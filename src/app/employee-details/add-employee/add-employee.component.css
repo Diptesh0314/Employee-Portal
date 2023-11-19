@@ -5,12 +5,13 @@
     padding: 10px;
     min-height: 300px;
     border-radius: 4px;
-    
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../../images/background.jpg');
 }
 
 .table-bordered , th , tr, td{
     border: 1px solid black;
     padding: 10px;
+    border-radius: 4px;
 }
 .submitBtn{
     color: white;
@@ -46,9 +47,13 @@
    margin-top: 2%;
 }
 #sbmtEmpForm:hover{
-    background-color: darkslateblue;
+    background-color: rgb(39, 239, 59);
 }
 
 #btnAdd:hover{
     background-color: blueviolet;
+}
+
+.delBtn:hover{
+    background-color: red;
 }
