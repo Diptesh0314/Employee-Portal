@@ -13,8 +13,8 @@ export class AddEmployeeComponent implements OnInit{
   }
   ngOnInit(): void {
     this.employeeForm=this.fb.group({
+      srchItem: [''],
       emps: this.fb.array([
-
         this.fb.group({  
           EmpName: '',  
           Address: '',  
@@ -45,12 +45,19 @@ export class AddEmployeeComponent implements OnInit{
         this.rtnEmpArray().removeAt(i);  
       }  
   }
+
+  editEmp(i:number){
+    if(i>0){
+      console.log(this.employeeForm.value.emps[i].EmpName + this.employeeForm.value.emps[i].Address)
+    }
+  }
   
   submitData(){
-    console.log("submitted");
+    if (this.employeeForm.valid){
+        console.log(this.employeeForm.controls['srchItem'].value);
+        console.log(this.rtnEmpArray().controls[0]?.value.EmpName);
+        console.log(this.employeeForm.value.emps[0]?.EmpName);
+    }   
   }
-
-
-
 
 }

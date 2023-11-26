@@ -1,10 +1,15 @@
 <form [formGroup]="employeeForm" (ngSubmit)="submitData()" class="addEmpForm">
-
+    <p>
+      <label for="search">Search Values: </label>
+      <input formControlName="srchItem" id="search" type="text">
+    </p>
+      
     <table class="table table-bordered" formArrayName="emps" style="width: 100%;">  
         <tr>  
-          <th>Add Multiple Employee:</th>  
+          <th>Add Multiple Employee:</th>
           <th colspan="3"><button type="button" (click)="addEmployee()" class="btn btn-primary" id="btnAdd">Add More</button></th>  
-        </tr>  
+        </tr> 
+        
         <tr *ngFor="let emp of rtnEmpArray().controls; let i=index" [formGroupName]="i" id="ROW{{i}}">  
           <td>  
               Employee Name :  
@@ -22,6 +27,9 @@
           <td *ngIf="i > 0">  
             <button (click)="removeEmp(i)" class="btn btn-danger delBtn">Remove</button>  
         </td> 
+        <td *ngIf="i > 0">
+          <button (click)="editEmp(i)" class="delBtn">Edit</button>
+        </td>
         </tr>  
       </table>  
        
