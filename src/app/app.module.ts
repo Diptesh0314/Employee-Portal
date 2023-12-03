@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {EmployeeDetailsModule} from './employee-details/employee-details.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {EmployeeDetailsModule} from './employee-details/employee-details.module'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EmployeeDetailsModule
+    EmployeeDetailsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

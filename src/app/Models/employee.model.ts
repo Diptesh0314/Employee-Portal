@@ -3,4 +3,5 @@ export class Employee {
     empName:string;
     empAddress:string;
     genderId:number;
+    gender:string
 }
