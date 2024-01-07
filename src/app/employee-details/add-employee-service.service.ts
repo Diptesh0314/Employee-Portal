@@ -11,5 +11,10 @@ export class AddEmployeeServiceService {
   constructor(private http : HttpClient) { }
   postEmps(emps:Employee[]):Observable<any>{
     return this.http.post<any>(this.baseUrl+"/Employee/AddEmployee",emps);
-}
+    }
+  
+    getEmps():Observable<any>{
+      return this.http.get<any>(this.baseUrl+"/Employee/GetEmployees");
+    }
+
 }

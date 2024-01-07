@@ -1,1 +1,22 @@
-<p>This is User List</p>
+<table class="tbl">
+    <tr>
+        <th>Employee Name
+        </th>
+        <th>Address
+        </th>
+        <th>Gender
+        </th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+     <td>
+      <a [routerLink]="['/AddEmployee', emp.empId]"> {{emp.empName}}</a>
+     </td>
+     <td>
+        {{emp.empAddress}}
+     </td>
+     <td>
+        {{emp.gender}}
+     </td>
+    </tr>
+</table>
+<router-outlet></router-outlet>

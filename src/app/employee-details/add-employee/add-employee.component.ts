@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,ReactiveFormsModule, FormArray   } from '@angular/forms';
 import { Employee } from 'src/app/Models/employee.model';
 import { AddEmployeeServiceService } from '../add-employee-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-employee',
@@ -11,7 +12,7 @@ import { AddEmployeeServiceService } from '../add-employee-service.service';
 export class AddEmployeeComponent implements OnInit{
   employeeForm! : FormGroup ;
   empList:Employee[]=[];
-  constructor(private fb: FormBuilder,private empService:AddEmployeeServiceService) {
+  constructor(private fb: FormBuilder,private empService:AddEmployeeServiceService, private route:ActivatedRoute) {
 
   }
   ngOnInit(): void {
@@ -24,7 +25,11 @@ export class AddEmployeeComponent implements OnInit{
           Gender:''
         }) 
       ]) 
-    })
+    });
+    this.route.params.subscribe((params) => {
+      console.log(params["id"]);
+      // Process the data as needed before rendering Component B
+    });
   }
 
 
